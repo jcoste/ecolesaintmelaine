@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot spots</title>
+    <link rel="stylesheet" href="https://cdn.pannellum.org/2.4/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.pannellum.org/2.4/pannellum.js"></script>
+    <style>
+    #panorama {
+        width: 1000px;
+        height: 600px;
+    }
+    </style>
+</head>
+<body>
+
+<div id="panorama"></div>
+<script>
+pannellum.viewer('panorama', {
+    "default": {
+        "firstScene": "cantine",
+        "type": "equirectangular",
+        "autoLoad": true,
+        "author": "Julien Coste",
+        "hfov": 96,
+        "compass": true,   
+    },
+    "scenes": {
+        "grandeCour": {
+            "panorama": "GrandeCour.jpg",
+            "title": "Grande cour",
+            "pitch": -0.86,
+            "yaw": 71.52,
+            "northOffset": 20, 
+            "hotSpotDebug": true,
+            "hotSpots": [
+                {
+                    "pitch": -2.44,
+                    "yaw": -153.75,
+                    "type": "scene",
+                    "text": "Cour des petits",
+                    "sceneId": "petiteCour"
+                },
+                {
+                    "pitch": -0.24,
+                    "yaw": 150.75,
+                    "type": "info",
+                    "text": "Salle Abracadabra"
+                },
+                {
+                    "pitch": -0.03,
+                    "yaw": -178.94,
+                    "type": "info",
+                    "text": "Classe CM1-CM2"
+                },
+                {
+                    "pitch": -0.34,
+                    "yaw": 123.52,
+                    "type": "info",
+                    "text": "Classe CE1-CE2"
+                },
+                {
+                    "pitch": -0.71,
+                    "yaw": 98.28,
+                    "type": "scene",
+                    "text": "Cantine",
+                    "sceneId": "entreeCantine"
+                },
+                {
+                    "pitch": -1.05,
+                    "yaw": 39.7,
+                    "type": "info",
+                    "text": "Couloir maternelles"
+                },
+                {
+                    "pitch": -0.01,
+                    "yaw": -42.53,
+                    "type": "info",
+                    "text": "Direction"
+                }
+
+            ]
+        },
+        "petiteCour": {
+            "panorama": "PetiteCour.jpg",
+            "title": "Cour des petits",
+            "pitch": -1.26,
+            "yaw": -177.6,
+            "northOffset": -85, 
+            "hotSpotDebug": true,
+            "hotSpots": [
+                {
+                    "pitch": -1.33,
+                    "yaw": 35.2,
+                    "type": "scene",
+                    "text": "Grande cour",
+                    "sceneId": "grandeCour"
+                }
+            ]
+        },
+        "entreeCantine": {
+            "panorama": "EntreeCantine.jpg",
+            "title": "Entrée cantine",
+            "pitch": -0.59,
+            "yaw":138.2,
+            "northOffset": 50, 
+            "hotSpotDebug": true,
+            "hotSpots": [
+                {
+                    "pitch": -20,
+                    "yaw": -43.19,
+                    "type": "scene",
+                    "text": "Grande cour",
+                    "sceneId": "grandeCour"
+                },
+                {
+                    "pitch": -8.66,
+                    "yaw": 142.58,
+                    "type": "scene",
+                    "text": "Cantine",
+                    "sceneId": "cantine"
+                }                
+            ]
+        },
+        "cantine": {
+            "panorama": "Cantine.jpg",
+            "title": "Cantine",
+            "pitch": -4.86,
+            "yaw":-154.98,
+            "northOffset": -80,
+            "hfov": 110, 
+            "hotSpotDebug": true,
+            "hotSpots": [
+                {
+                    "pitch": -9.87,
+                    "yaw": 108.29,
+                    "type": "scene",
+                    "text": "Entrée cantine",
+                    "sceneId": "entreeCantine"
+                },
+                {
+                    "pitch": -2.49,
+                    "yaw": -54.1,
+                    "type": "info",
+                    "text": "Classe CP-CE1"
+                },                
+            ]
+        }
+
+    }
+
+
+    
+});
+</script>
+
+</body>
+</html>
