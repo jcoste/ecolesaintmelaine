@@ -3,23 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot spots</title>
+    <title>Visite Ecole Saint Melaine</title>
     <link rel="stylesheet" href="https://cdn.pannellum.org/2.4/pannellum.css"/>
     <script type="text/javascript" src="https://cdn.pannellum.org/2.4/pannellum.js"></script>
-    <style>
-    #panorama {
-        width: 1000px;
-        height: 600px;
-    }
-    </style>
 </head>
 <body>
 
-<div id="panorama"></div>
+<div id="panorama" style="width:100%;height:800px"></div>
 <script>
 pannellum.viewer('panorama', {
     "default": {
-        "firstScene": "cantine",
+        "firstScene": "grandeCour",
         "type": "equirectangular",
         "autoLoad": true,
         "author": "Julien Coste",
@@ -28,12 +22,21 @@ pannellum.viewer('panorama', {
     },
     "scenes": {
         "grandeCour": {
-            "panorama": "GrandeCour.jpg",
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/grandeCour",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
             "title": "Grande cour",
             "pitch": -0.86,
             "yaw": 71.52,
             "northOffset": 20, 
-            "hotSpotDebug": true,
+            "hotSpotDebug": false,
             "hotSpots": [
                 {
                     "pitch": -2.44,
@@ -83,12 +86,21 @@ pannellum.viewer('panorama', {
             ]
         },
         "petiteCour": {
-            "panorama": "PetiteCour.jpg",
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/petiteCour",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
             "title": "Cour des petits",
             "pitch": -1.26,
             "yaw": -177.6,
             "northOffset": -85, 
-            "hotSpotDebug": true,
+            "hotSpotDebug": false,
             "hotSpots": [
                 {
                     "pitch": -1.33,
@@ -100,12 +112,21 @@ pannellum.viewer('panorama', {
             ]
         },
         "entreeCantine": {
-            "panorama": "EntreeCantine.jpg",
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/entreeCantine",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
             "title": "Entrée cantine",
             "pitch": -0.59,
             "yaw":138.2,
             "northOffset": 50, 
-            "hotSpotDebug": true,
+            "hotSpotDebug": false,
             "hotSpots": [
                 {
                     "pitch": -20,
@@ -124,13 +145,22 @@ pannellum.viewer('panorama', {
             ]
         },
         "cantine": {
-            "panorama": "Cantine.jpg",
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/cantine",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
             "title": "Cantine",
             "pitch": -4.86,
             "yaw":-154.98,
             "northOffset": -80,
             "hfov": 110, 
-            "hotSpotDebug": true,
+            "hotSpotDebug": false,
             "hotSpots": [
                 {
                     "pitch": -9.87,
