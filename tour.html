@@ -54,14 +54,16 @@ pannellum.viewer('panorama', {
                 {
                     "pitch": -0.03,
                     "yaw": -178.94,
-                    "type": "info",
-                    "text": "Classe CM1-CM2"
+                    "type": "scene",
+                    "text": "Classe CM1-CM2",
+                    "sceneId": "classeCM1CM2"
                 },
                 {
                     "pitch": -0.34,
                     "yaw": 123.52,
-                    "type": "info",
-                    "text": "Classe CE1-CE2"
+                    "type": "scene",
+                    "text": "Classe CE1-CE2",
+                    "sceneId": "classeCE1CE2"
                 },
                 {
                     "pitch": -0.71,
@@ -73,8 +75,9 @@ pannellum.viewer('panorama', {
                 {
                     "pitch": -1.05,
                     "yaw": 39.7,
-                    "type": "info",
-                    "text": "Couloir maternelles"
+                    "type": "scene",
+                    "text": "Couloir maternelles",
+                    "sceneId": "couloirMaternelles"
                 },
                 {
                     "pitch": -0.01,
@@ -176,8 +179,136 @@ pannellum.viewer('panorama', {
                     "text": "Classe CP-CE1"
                 },                
             ]
+        },
+        "classeCE1CE2": {
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/classeCE1CE2",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
+            "title": "Classe CE1-CE2",
+            "pitch": 0,
+            "yaw": 0,
+            "northOffset": 90, 
+            "hfov": 110,
+            "hotSpotDebug": false,
+            "hotSpots": [
+                {
+                    "pitch": -3.41,
+                    "yaw": -117.19, 
+                    "type": "scene",
+                    "text": "Grande cour",
+                    "sceneId": "grandeCour"
+                },
+                {
+                    "pitch": -3.0,
+                    "yaw": -160.47, 
+                    "type": "scene",
+                    "text": "Salle Abracadabra",
+                    "sceneId": "salleAbracadabra"
+                }
+            ]
+        },
+        "classeCM1CM2": {
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/classeCM1CM2",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
+            "title": "Classe CM1-CM2",
+            "pitch": 0,
+            "yaw": 0,
+            "northOffset": -85, 
+            "hfov": 110,
+            "hotSpotDebug": false,
+            "hotSpots": [
+                {
+                    "pitch": -4.00,
+                    "yaw": 102.08, 
+                    "type": "scene",
+                    "text": "Grande cour",
+                    "sceneId": "grandeCour"
+                },
+                {
+                    "pitch": -1.97,
+                    "yaw": 146.42, 
+                    "type": "scene",
+                    "text": "Salle Abracadabra",
+                    "sceneId": "salleAbracadabra"
+                }
+            ]
+        },
+        "couloirMaternelles": {
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/couloirMaternelles",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
+            "title": "Classe CM1-CM2",
+            "pitch": 0,
+            "yaw": 0,
+            "northOffset": 0, 
+            "hfov": 110,
+            "hotSpotDebug": true,
+            "hotSpots": [
+                {
+                    "pitch": -5.12,
+                    "yaw": 24.22, 
+                    "type": "scene",
+                    "text": "Classe Moyens-Grands",
+                    "sceneId": "classeMoyensGrands"
+                },
+                {
+                    "pitch": -5.12,
+                    "yaw": -25.00, 
+                    "type": "scene",
+                    "text": "Classe Petits-Moyens",
+                    "sceneId": "classePetitsMoyens"
+                }
+            ]
+        },
+        "classeMoyensGrands": {
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/classeMoyensGrands",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
+            "title": "Classe Moyens-Grands",
+            "pitch": 0,
+            "yaw": 0,
+            "northOffset": -90, 
+            "hfov": 110,
+            "hotSpotDebug": true,
+            "hotSpots": [
+                {
+                    "pitch": -4.45,
+                    "yaw": 28.72, 
+                    "type": "scene",
+                    "text": "Couloir Maternelles",
+                    "sceneId": "couloirMaternelles"
+                }
+            ]
         }
-
     }
 
 
