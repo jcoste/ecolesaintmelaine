@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visite Ecole Saint Melaine</title>
-    <link rel="stylesheet" href="https://cdn.pannellum.org/2.4/pannellum.css"/>
-    <script type="text/javascript" src="https://cdn.pannellum.org/2.4/pannellum.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 </head>
 <body>
 
@@ -84,6 +84,15 @@ pannellum.viewer('panorama', {
                     "yaw": -42.53,
                     "type": "info",
                     "text": "Direction"
+                },
+                {
+                    "pitch": -0.94,
+                    "yaw": 48.59, 
+                    "type": "scene",
+                    "text": "Classe Moyens-Grands",
+                    "sceneId": "classeMoyensGrands",
+                    "targetPitch": -2.52,
+                    "targetYaw": 80.39 
                 }
 
             ]
@@ -143,7 +152,9 @@ pannellum.viewer('panorama', {
                     "yaw": 142.58,
                     "type": "scene",
                     "text": "Cantine",
-                    "sceneId": "cantine"
+                    "sceneId": "cantine",
+                    "targetPitch": -3.78,
+                    "targetYaw": 285.05
                 }                
             ]
         },
@@ -170,7 +181,9 @@ pannellum.viewer('panorama', {
                     "yaw": 108.29,
                     "type": "scene",
                     "text": "Entrée cantine",
-                    "sceneId": "entreeCantine"
+                    "sceneId": "entreeCantine",
+                    "targetPitch": -11.28,
+                    "targetYaw": -43.5
                 },
                 {
                     "pitch": -2.49,
@@ -199,8 +212,8 @@ pannellum.viewer('panorama', {
             "hotSpotDebug": false,
             "hotSpots": [
                 {
-                    "pitch": -3.41,
-                    "yaw": -117.19, 
+                    "pitch": -6.65,
+                    "yaw": -118.15, 
                     "type": "scene",
                     "text": "Grande cour",
                     "sceneId": "grandeCour"
@@ -208,9 +221,9 @@ pannellum.viewer('panorama', {
                 {
                     "pitch": -3.0,
                     "yaw": -160.47, 
-                    "type": "scene",
-                    "text": "Salle Abracadabra",
-                    "sceneId": "salleAbracadabra"
+                    "type": "info",
+                    "text": "Salle Abracadabra"
+                    
                 }
             ]
         },
@@ -233,8 +246,8 @@ pannellum.viewer('panorama', {
             "hotSpotDebug": false,
             "hotSpots": [
                 {
-                    "pitch": -4.00,
-                    "yaw": 102.08, 
+                    "pitch": -8.01,
+                    "yaw": 101.57, 
                     "type": "scene",
                     "text": "Grande cour",
                     "sceneId": "grandeCour"
@@ -242,9 +255,8 @@ pannellum.viewer('panorama', {
                 {
                     "pitch": -1.97,
                     "yaw": 146.42, 
-                    "type": "scene",
-                    "text": "Salle Abracadabra",
-                    "sceneId": "salleAbracadabra"
+                    "type": "info",
+                    "text": "Salle Abracadabra"
                 }
             ]
         },
@@ -271,14 +283,23 @@ pannellum.viewer('panorama', {
                     "yaw": 24.22, 
                     "type": "scene",
                     "text": "Classe Moyens-Grands",
-                    "sceneId": "classeMoyensGrands"
+                    "sceneId": "classeMoyensGrands",
+                    "targetPitch": -4.50,
+                    "targetYaw": 214.83 
                 },
                 {
                     "pitch": -5.12,
                     "yaw": -25.00, 
                     "type": "scene",
                     "text": "Classe Petits-Moyens",
-                    "sceneId": "classePetitsMoyens"
+                    "sceneId": "salleSieste"
+                },
+                {
+                    "pitch": -6.72,
+                    "yaw": -182.97,
+                    "type": "scene",
+                    "text": "Grande cour",
+                    "sceneId": "grandeCour"
                 }
             ]
         },
@@ -305,6 +326,40 @@ pannellum.viewer('panorama', {
                     "yaw": 28.72, 
                     "type": "scene",
                     "text": "Couloir Maternelles",
+                    "sceneId": "couloirMaternelles"
+                },
+                {
+                    "pitch": -4.44,
+                    "yaw": -114.95,
+                    "type": "scene",
+                    "text": "Grande cour",
+                    "sceneId": "grandeCour"
+                }
+            ]
+        },
+        "salleSieste": {
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/salleSieste",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
+            "title": "Salle de sieste",
+            "pitch": 0,
+            "yaw": 0,
+            "northOffset": 0, 
+            "hfov": 110,
+            "hotSpotDebug": false,
+            "hotSpots": [
+                {
+                    "pitch": -8.01,
+                    "yaw": 183.16, 
+                    "type": "scene",
+                    "text": "Classe Petits-Moyens",
                     "sceneId": "couloirMaternelles"
                 }
             ]
