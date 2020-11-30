@@ -48,22 +48,27 @@ pannellum.viewer('panorama', {
                 {
                     "pitch": -0.24,
                     "yaw": 150.75,
-                    "type": "info",
-                    "text": "Salle Abracadabra"
+                    "type": "scene",
+                    "text": "Salle Abracadabra",
+                    "sceneId": "salleAbracadabra"
                 },
                 {
                     "pitch": -0.03,
                     "yaw": -178.94,
                     "type": "scene",
                     "text": "Classe CM1-CM2",
-                    "sceneId": "classeCM1CM2"
+                    "sceneId": "classeCM1CM2",
+                    "targetPitch": -4.47,
+                    "targetYaw": -71.44 
                 },
                 {
                     "pitch": -0.34,
                     "yaw": 123.52,
                     "type": "scene",
-                    "text": "Classe CE1-CE2",
-                    "sceneId": "classeCE1CE2"
+                    "text": "Classe CE2-CM1",
+                    "sceneId": "classeCE2CM1",
+                    "targetPitch": -3.64,
+                    "targetYaw": 75.87 
                 },
                 {
                     "pitch": -0.71,
@@ -82,8 +87,11 @@ pannellum.viewer('panorama', {
                 {
                     "pitch": -0.01,
                     "yaw": -42.53,
-                    "type": "info",
-                    "text": "Direction"
+                    "type": "scene",
+                    "text": "Bureaux",
+                    "sceneId": "bureau",
+                    "targetPitch": -5.78,
+                    "targetYaw": -80.76
                 },
                 {
                     "pitch": -0.94,
@@ -93,9 +101,85 @@ pannellum.viewer('panorama', {
                     "sceneId": "classeMoyensGrands",
                     "targetPitch": -2.52,
                     "targetYaw": 80.39 
+                },
+                {
+                    "pitch": -1.35,
+                    "yaw": 71.72, 
+                    "type": "scene",
+                    "text": "Préau",
+                    "sceneId": "preau",
+                    "targetPitch": -5.44,
+                    "targetYaw": 111.44 
                 }
 
             ]
+        },
+        "preau": {
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/preau",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
+            "title": "Préau",
+            "pitch": -1.26,
+            "yaw": -177.6,
+            "northOffset": -15, 
+            "hotSpotDebug": false,
+            "hotSpots": [
+            {
+                "pitch": -1.14,
+                "yaw": -88.14,
+                "type": "scene",
+                "text": "Cour des petits",
+                "sceneId": "petiteCour"
+            },
+
+            {
+                "pitch": -0.65,
+                "yaw": -109.25,
+                "type": "scene",
+                "text": "Classe CE2-CM1",
+                "sceneId": "classeCE2CM1"
+            },
+            {
+                "pitch": -2.30,
+                "yaw": -156.27,
+                "type": "scene",
+                "text": "Cantine",
+                "sceneId": "entreeCantine"
+            },
+            {
+                "pitch": -0.3,
+                "yaw": -12.42,
+                "type": "scene",
+                "text": "Couloir maternelles",
+                "sceneId": "couloirMaternelles"
+            },
+            {
+                "pitch": -0.61,
+                "yaw": 27.10, 
+                "type": "scene",
+                "text": "Classe Moyens-Grands",
+                "sceneId": "classeMoyensGrands",
+                "targetPitch": -2.52,
+                "targetYaw": 80.39 
+            },
+            {
+                "pitch": -3.35,
+                "yaw": -67.05, 
+                "type": "scene",
+                "text": "Grande Cour",
+                "sceneId": "grandeCour",
+                "targetPitch": -2.52,
+                "targetYaw": 80.39 
+            }
+
+        ]
         },
         "petiteCour": {
             "type": "multires",
@@ -120,9 +204,128 @@ pannellum.viewer('panorama', {
                     "type": "scene",
                     "text": "Grande cour",
                     "sceneId": "grandeCour"
+                },
+                {
+                    "pitch": -0.81,
+                    "yaw": -166.65,
+                    "type": "scene",
+                    "text": "Classe CP-CE1",
+                    "sceneId": "classeCPCE1",
+                    "targetPitch": -2.52,
+                    "targetYaw": 80.39 
                 }
             ]
         },
+        "bureau": {
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/bureau",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
+            "title": "Bureau",
+            "pitch": -1.26,
+            "yaw": -177.6,
+            "hfov":120,
+            "northOffset": 84, 
+            "hotSpotDebug": false,
+            "hotSpots": [
+                {
+                    "pitch": -8.52,
+                    "yaw": -47.48,
+                    "type": "scene",
+                    "text": "Stockage",
+                    "sceneId": "stockage"
+                },
+                {
+                    "pitch": -11.19,
+                    "yaw": 160.7,
+                    "type": "scene",
+                    "text": "Bureau Direction",
+                    "sceneId": "bureauDirection"
+                },
+                {
+                    "pitch": -7.42,
+                    "yaw": 122.14,
+                    "type": "scene",
+                    "text": "Cour",
+                    "sceneId": "grandeCour",
+                    "targetPitch": -0.95,
+                    "targetYaw": 160.85
+                }
+            ]
+        },
+        "bureauDirection": {
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/bureau-direction",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
+            "title": "Bureau Direction",
+            "pitch": -10.12,
+            "yaw": 5.82,
+            "hfov":120,
+            "northOffset": 0, 
+            "hotSpotDebug": false,
+            "hotSpots": [
+                {
+                    "pitch": -10.02,
+                    "yaw": 92.19,
+                    "type": "scene",
+                    "text": "Bureau",
+                    "sceneId": "bureau",
+                    "targetPitch": -0.75,
+                    "targetYaw": 6.92
+                }
+            ]
+        },
+        "stockage": {
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/stockage",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
+            "title": "Stockage",
+            "pitch": -4.19,
+            "yaw": -155.90,
+            "hfov":120,
+            "northOffset": -120, 
+            "hotSpotDebug": false,
+            "hotSpots": [
+                {
+                    "pitch": -5.85,
+                    "yaw": 29.34,
+                    "type": "scene",
+                    "text": "Bureau",
+                    "sceneId": "bureau",
+                    "targetPitch": -4.66,
+                    "targetYaw": 114.8
+                },
+                {
+                    "pitch": -4.19,
+                    "yaw": -155.90,
+                    "type": "scene",
+                    "text": "Salle Sieste",
+                    "sceneId": "salleSieste",
+                    "targetPitch": -5.96,
+                    "targetYaw": -177.3
+                }
+            ]
+        },        
         "entreeCantine": {
             "type": "multires",
             "multiRes": {
@@ -144,8 +347,10 @@ pannellum.viewer('panorama', {
                     "pitch": -20,
                     "yaw": -43.19,
                     "type": "scene",
-                    "text": "Grande cour",
-                    "sceneId": "grandeCour"
+                    "text": "Préau",
+                    "sceneId": "preau",
+                    "targetPitch": -0.48,
+                    "targetYaw": 19.33
                 },
                 {
                     "pitch": -8.66,
@@ -155,7 +360,7 @@ pannellum.viewer('panorama', {
                     "sceneId": "cantine",
                     "targetPitch": -3.78,
                     "targetYaw": 285.05
-                }                
+                }
             ]
         },
         "cantine": {
@@ -188,12 +393,52 @@ pannellum.viewer('panorama', {
                 {
                     "pitch": -2.49,
                     "yaw": -54.1,
-                    "type": "info",
-                    "text": "Classe CP-CE1"
-                },                
+                    "type": "scene",
+                    "text": "Classe CP-CE1",
+                    "sceneId": "classeCPCE1",
+                    "targetPitch": -4.15,
+                    "targetYaw": -171.5
+                },
+            ]
+        },        
+        "classeCPCE1": {
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/cp",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
+            "title": "Classe CP-CE1",
+            "pitch": -0.59,
+            "yaw":138.2,
+            "northOffset": 0, 
+            "hotSpotDebug": false,
+            "hotSpots": [
+                {
+                    "pitch": -8.9,
+                    "yaw": -86.32,
+                    "type": "scene",
+                    "text": "Petite Cour",
+                    "sceneId": "petiteCour",
+                    "targetPitch": -0.48,
+                    "targetYaw": 19.33
+                },
+                {
+                    "pitch": -4.66,
+                    "yaw": -35.56,
+                    "type": "scene",
+                    "text": "Cantine",
+                    "sceneId": "cantine",
+                    "targetPitch": -2.57,
+                    "targetYaw": 118.8
+                }
             ]
         },
-        "classeCE1CE2": {
+        "classeCE2CM1": {
             "type": "multires",
             "multiRes": {
                 "basePath": "images/multires/classeCE1CE2",
@@ -204,7 +449,7 @@ pannellum.viewer('panorama', {
                 "maxLevel": 4,
                 "cubeResolution": 2600
             },
-            "title": "Classe CE1-CE2",
+            "title": "Classe CE2-CM1",
             "pitch": 0,
             "yaw": 0,
             "northOffset": 90, 
@@ -216,14 +461,63 @@ pannellum.viewer('panorama', {
                     "yaw": -118.15, 
                     "type": "scene",
                     "text": "Grande cour",
-                    "sceneId": "grandeCour"
+                    "sceneId": "grandeCour",
+                    "targetPitch": 0.30,
+                    "targetYaw": -32 
                 },
                 {
                     "pitch": -3.0,
                     "yaw": -160.47, 
-                    "type": "info",
-                    "text": "Salle Abracadabra"
-                    
+                    "type": "scene",
+                    "text": "Salle Abracadabra",
+                    "sceneId": "salleAbracadabra",
+                    "targetPitch": -4.74,
+                    "targetYaw": -159.78 
+                }
+            ]
+        },
+        "salleAbracadabra": {
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/salleAbracadabra",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
+            "title": "Salle Abracadabra",
+            "pitch": -6.24,
+            "yaw": 129,
+            "northOffset": 50, 
+            "hfov": 110,
+            "hotSpotDebug": false,
+            "hotSpots": [
+                {
+                    "pitch": -4.76,
+                    "yaw": -53.76, 
+                    "type": "scene",
+                    "text": "Grande cour",
+                    "sceneId": "grandeCour",
+                    "targetPitch": 0.30,
+                    "targetYaw": -39.3 
+                },
+                {
+                    "pitch": -6.91,
+                    "yaw": -0.14, 
+                    "type": "scene",
+                    "text": "Classe CE2-CM1",
+                    "sceneId": "classeCE2CM1"
+                },
+                {
+                    "pitch": -1.67,
+                    "yaw": -83.69, 
+                    "type": "scene",
+                    "text": "Classe CM1-CM2",
+                    "sceneId": "classeCM1CM2",
+                    "targetPitch": 0.54,
+                    "targetYaw": -26.5 
                 }
             ]
         },
@@ -250,13 +544,18 @@ pannellum.viewer('panorama', {
                     "yaw": 101.57, 
                     "type": "scene",
                     "text": "Grande cour",
-                    "sceneId": "grandeCour"
+                    "sceneId": "grandeCour",
+                    "targetPitch": 0.30,
+                    "targetYaw": -8 
                 },
                 {
                     "pitch": -1.97,
                     "yaw": 146.42, 
-                    "type": "info",
-                    "text": "Salle Abracadabra"
+                    "type": "scene",
+                    "text": "Salle Abracadabra",
+                    "sceneId": "salleAbracadabra",
+                    "targetPitch": -11,
+                    "targetYaw": 46.82 
                 }
             ]
         },
@@ -271,7 +570,7 @@ pannellum.viewer('panorama', {
                 "maxLevel": 4,
                 "cubeResolution": 2600
             },
-            "title": "Classe CM1-CM2",
+            "title": "Couloir Maternelles",
             "pitch": 0,
             "yaw": 0,
             "northOffset": 0, 
@@ -292,7 +591,18 @@ pannellum.viewer('panorama', {
                     "yaw": -25.00, 
                     "type": "scene",
                     "text": "Classe Petits-Moyens",
-                    "sceneId": "salleSieste"
+                    "sceneId": "classePetitsMoyens",
+                    "targetPitch": -4.44,
+                    "targetYaw": 9.92 
+                },
+                {
+                    "pitch": -2.62,
+                    "yaw": -12.74, 
+                    "type": "scene",
+                    "text": "Toilettes",
+                    "sceneId": "toilettesPetit",
+                    "targetPitch": -15.145,
+                    "targetYaw": -20.08
                 },
                 {
                     "pitch": -6.72,
@@ -332,8 +642,93 @@ pannellum.viewer('panorama', {
                     "pitch": -4.44,
                     "yaw": -114.95,
                     "type": "scene",
-                    "text": "Grande cour",
-                    "sceneId": "grandeCour"
+                    "text": "Préau",
+                    "sceneId": "preau",
+                    "targetPitch": -2.23,
+                    "targetYaw": -158.47
+                }
+            ]
+        },
+        "classePetitsMoyens": {
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/petit-moyen",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
+            "title": "Classe Petits-Moyens",
+            "pitch": 0,
+            "yaw": 0,
+            "northOffset": -90, 
+            "hfov": 110,
+            "hotSpotDebug": false,
+            "hotSpots": [
+                {
+                    "pitch": -5.17,
+                    "yaw": 143.50, 
+                    "type": "scene",
+                    "text": "Couloir Maternelles",
+                    "sceneId": "couloirMaternelles",
+                    "targetPitch": -4.19,
+                    "targetYaw": 178.74
+                },
+                {
+                    "pitch": 0.65,
+                    "yaw": 61.88,
+                    "type": "scene",
+                    "text": "Salle Sieste",
+                    "sceneId": "salleSieste"
+                },
+                {
+                    "pitch": -3.66,
+                    "yaw": 117.46,
+                    "type": "scene",
+                    "text": "Toilettes",
+                    "sceneId": "toilettesPetit",
+                    "targetPitch": -15.85,
+                    "targetYaw": 25.45
+                }
+            ]
+        },
+        "toilettesPetit": {
+            "type": "multires",
+            "multiRes": {
+                "basePath": "images/multires/toilettes-petit",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 2600
+            },
+            "title": "Toilettes Petits",
+            "pitch": 0,
+            "yaw": 0,
+            "northOffset": 0, 
+            "hfov": 110,
+            "hotSpotDebug": false,
+            "hotSpots": [
+                {
+                    "pitch": -5.65,
+                    "yaw": 136.47, 
+                    "type": "scene",
+                    "text": "Couloir Maternelles",
+                    "sceneId": "couloirMaternelles",
+                    "targetPitch": -4.19,
+                    "targetYaw": 178.74
+                },
+                {
+                    "pitch": -10.52,
+                    "yaw": -167.64,
+                    "type": "scene",
+                    "text": "Classe Petis-Moyens",
+                    "sceneId": "classePetitsMoyens",
+                    "targetPitch": -1.18,
+                    "targetYaw": -85.77 
                 }
             ]
         },
@@ -360,7 +755,18 @@ pannellum.viewer('panorama', {
                     "yaw": 183.16, 
                     "type": "scene",
                     "text": "Classe Petits-Moyens",
-                    "sceneId": "couloirMaternelles"
+                    "sceneId": "classePetitsMoyens",
+                    "targetPitch": -1.18,
+                    "targetYaw": -85.77 
+                },
+                {
+                    "pitch": -5.95,
+                    "yaw": -12.18, 
+                    "type": "scene",
+                    "text": "Stockage",
+                    "sceneId": "stockage",
+                    "targetPitch": -5.80,
+                    "targetYaw": 33.28 
                 }
             ]
         }
