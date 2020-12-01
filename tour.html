@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
     <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <style>
+        html, body { margin:0; height: 100%;}
         #panorama {
             width: 100%;
-            height: 800px;
+            height:  100%
         }
         #planDiv {
             position: absolute;
@@ -43,7 +44,17 @@
             .s2{
                 fill-opacity:1;
                 fill:#00f;
+                cursor:pointer;
             }
+            .s3{
+                fill-opacity:0.001;
+                fill:#000;
+                cursor:pointer;
+            }
+            .s2:hover{
+                fill-opacity:1;
+                fill:#ff00e1;
+            }            
             
             </style> 
               <g id="layer2" transform="translate(-25,0)">
@@ -103,6 +114,23 @@
                 <path d="m148.22735 231.90672h28.51821" id="path4838" class="s1"/>
                 <path d="m141.43473 231.96063h2.15638" id="path4840" class="s1"/>
               </g>
+              <rect id="case-bureauDirection" width="10.752118" height="22.431145" x="14.237288" y="29.698093" class="s3" />
+              <rect id="case-bureau" width="19.465042" height="22.505297" x="25.768009" y="29.661018" class="s3"/>
+              <rect id="case-stockage" width="31.81144" height="9.7139835" x="36.779659" y="19.094278" class="s3"/>
+              <rect id="case-salleSieste" width="17.055084" height="22.87606" x="69.518013" y="29.586863" class="s3"/>
+              <rect id="case-toilettesPetit" width="18.204449" height="22.913136" x="87.388763" y="29.549786" class="s3"/>
+              <rect id="case-classePetitsMoyens" width="37.150421" height="32.8125" x="69.555084" y="53.278599" class="s3"/>
+              <rect id="case-couloirMaternelles" width="8.3369684" height="38.800987" x="107.43679" y="44.886993" class="s3"/>
+              <rect id="case-classeMoyensGrands" width="33.819778" height="45.512508" x="116.77" y="40.692291" class="s3"/>
+              <rect id="case-classeCM1CM2" width="37.595009" height="33.55761" x="17.512878" y="165.22249" class="s3"/>
+              <rect id="case-salleAbracadabra" width="16.359335" height="33.55761" x="56.261433" y="165.27492" class="s3"/>
+              <rect id="case-classeCE2CM1" width="39.377758" height="33.505177" x="76.763031" y="165.27492" class="s3"/>
+              <rect id="case-entreeCantine" width="21.170551" height="27.176907" x="116.93855" y="165.32309" class="s3"/>
+              <rect id="case-cantine" width="34.23925" height="38.800987" x="116.97974" y="192.75021" class="s3"/>
+              <path id="case-classeCPCE1" d="m 116.9273,232.39014 34.39655,0.0524 0.0524,41.52755 -34.44898,-8.44184 z" class="s3"/>
+              <path id="case-petiteCour" d="m 115.90042,199.91525 c 0,0 -115.69068494,-0.76812 -115.69068494,-0.24378 0,0.52433 -0.10486753,40.79347 -0.10486753,40.79347 l 11.01109047,11.6403 104.487852,13.80577 z" class="s3"/>
+              <rect id="case-preau" width="42.646381" height="77.328918" x="116.54254" y="87.043747" class="s3"/>
+              <path id="case-grandeCour" d="M 116.54255,164.37266 116.0185,87.046837 68.368644,87.055087 68.665255,53.463982 0.22245763,53.538135 0.14830505,164.6928 Z" class="s3"/>
               <ellipse id="point-bureauDirection" ry="2.4381702" rx="2.2857845" cy="47.901936" cx="18.435385" class="s2"/>
               <ellipse id="point-bureau" ry="2.4381702" rx="2.2857845" cy="41.05933" cx="35.130623" class="s2"/>
               <ellipse id="point-stockage" ry="2.4381702" rx="2.2857845" cy="26.115707" cx="55.422493" class="s2"/>
@@ -123,7 +151,6 @@
             </svg>
         </div>
 </div>
-<div id="load-scene" class="pnlm-controls">Cantine</div>
 
 <script>
   function getUrlParameter(name) {
@@ -132,6 +159,8 @@
     var results = regex.exec(location.search);
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
   };
+
+  var scenes=['grandeCour', 'preau', 'petiteCour', 'bureau', 'bureauDirection', 'stockage', 'entreeCantine', 'cantine', 'classeCPCE1', 'classeCE2CM1', 'salleAbracadabra', 'classeCM1CM2', 'couloirMaternelles', 'classeMoyensGrands', 'classePetitsMoyens', 'toilettesPetit', 'salleSieste']
 
   var scene = getUrlParameter('scene');
 
@@ -908,6 +937,32 @@ viewer.on('scenechange',
     }
 );
 document.getElementById('point-'+currentScene).style.fill="red";
+
+scenes.forEach(s => {
+    var myCase = document.getElementById('case-'+s);
+    myCase.onclick = function() { viewer.loadScene(s) };
+    myCase.onmouseover = function() { 
+        myCase.style.fill="#00f"
+        myCase.style.fillOpacity="0.5"
+    };
+    myCase.onmouseout = function() { 
+        myCase.style.fill="#000"
+        myCase.style.fillOpacity="0.001"
+    };
+    var myPoint = document.getElementById('point-'+s);
+    myPoint.onclick = function() { viewer.loadScene(s) };
+    myPoint.onmouseover = function() { 
+        var myCase = document.getElementById('case-'+s);
+        myCase.style.fill="#00f"
+        myCase.style.fillOpacity="0.5"
+    };
+    myPoint.onmouseout = function() { 
+        var myCase = document.getElementById('case-'+s);
+        myCase.style.fill="#000"
+        myCase.style.fillOpacity="0.001"
+    };    
+});
+
 </script>
 
 </body>
