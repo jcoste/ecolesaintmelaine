@@ -126,15 +126,27 @@
 <div id="load-scene" class="pnlm-controls">Cantine</div>
 
 <script>
+  function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+  };
+
+  var scene = getUrlParameter('scene');
+
   var currentScene = "grandeCour";
+  if (scene != '') {
+    currentScene = scene;
+  }
   var viewer = pannellum.viewer('panorama', {
     "default": {
-        "firstScene": "grandeCour",
+        "firstScene": currentScene,
         "type": "equirectangular",
         "autoLoad": true,
         "author": "Julien Coste",
         "hfov": 96,
-        "compass": true,   
+        "compass": true,
     },
     "scenes": {
         "grandeCour": {
@@ -895,7 +907,7 @@ viewer.on('scenechange',
         document.getElementById('point-'+currentScene).style.fill="red";
     }
 );
-document.getElementById('point-grandeCour').style.fill="red";
+document.getElementById('point-'+currentScene).style.fill="red";
 </script>
 
 </body>
