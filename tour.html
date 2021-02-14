@@ -74,7 +74,7 @@
         <div class="ctrl" id="plan"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-floor-plan" width="32" height="32" viewBox="0 0 24 24"><path d="M10,5V10H9V5H5V13H9V12H10V17H9V14H5V19H12V17H13V19H19V17H21V21H3V3H21V15H19V10H13V15H12V9H19V5H10Z" /></svg></div>
     </div>
     <div id="planDiv">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 160 280" version="1.1" id="svg3784">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="autoo tou" viewBox="0 0 160 280" version="1.1" id="svg3784">
             <style>
             .s1{
                 fill:none;
@@ -163,7 +163,6 @@
               </g>
               <rect id="case-bureauDirection" width="10.752118" height="22.431145" x="14.237288" y="29.698093" class="s3" />
               <rect id="case-bureau" width="19.465042" height="22.505297" x="25.768009" y="29.661018" class="s3"/>
-              <rect id="case-stockage" width="31.81144" height="9.7139835" x="36.779659" y="19.094278" class="s3"/>
               <rect id="case-salleSieste" width="17.055084" height="22.87606" x="69.518013" y="29.586863" class="s3"/>
               <rect id="case-toilettesPetit" width="18.204449" height="22.913136" x="87.388763" y="29.549786" class="s3"/>
               <rect id="case-classePetitsMoyens" width="37.150421" height="32.8125" x="69.555084" y="53.278599" class="s3"/>
@@ -180,7 +179,6 @@
               <path id="case-grandeCour" d="M 116.54255,164.37266 116.0185,87.046837 68.368644,87.055087 68.665255,53.463982 0.22245763,53.538135 0.14830505,164.6928 Z" class="s3"/>
               <ellipse id="point-bureauDirection" ry="2.4381702" rx="2.2857845" cy="47.901936" cx="18.435385" class="s2"/>
               <ellipse id="point-bureau" ry="2.4381702" rx="2.2857845" cy="41.05933" cx="35.130623" class="s2"/>
-              <ellipse id="point-stockage" ry="2.4381702" rx="2.2857845" cy="26.115707" cx="55.422493" class="s2"/>
               <ellipse id="point-salleSieste" ry="2.4381702" rx="2.2857845" cy="40.482555" cx="78.388481" class="s2"/>
               <ellipse id="point-toilettesPetit" ry="2.4381702" rx="2.2857845" cy="42.842075" cx="98.418182" class="s2"/>
               <ellipse id="point-classePetitsMoyens" ry="2.4381702" rx="2.2857845" cy="70.107635" cx="89.294701" class="s2"/>
@@ -207,7 +205,7 @@
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
   };
 
-  var scenes=['grandeCour', 'preau', 'petiteCour', 'bureau', 'bureauDirection', 'stockage', 'entreeCantine', 'cantine', 'classeCPCE1', 'classeCE2CM1', 'salleAbracadabra', 'classeCM1CM2', 'couloirMaternelles', 'classeMoyensGrands', 'classePetitsMoyens', 'toilettesPetit', 'salleSieste']
+  var scenes=['grandeCour', 'preau', 'petiteCour', 'bureau', 'bureauDirection', 'entreeCantine', 'cantine', 'classeCPCE1', 'classeCE2CM1', 'salleAbracadabra', 'classeCM1CM2', 'couloirMaternelles', 'classeMoyensGrands', 'classePetitsMoyens', 'toilettesPetit', 'salleSieste']
 
   var scene = getUrlParameter('scene');
 
@@ -452,13 +450,6 @@
             "hotSpotDebug": false,
             "hotSpots": [
                 {
-                    "pitch": -8.52,
-                    "yaw": -47.48,
-                    "type": "scene",
-                    "text": "Stockage",
-                    "sceneId": "stockage"
-                },
-                {
                     "pitch": -11.19,
                     "yaw": 160.7,
                     "type": "scene",
@@ -505,44 +496,6 @@
                 }
             ]
         },
-        "stockage": {
-            "type": "multires",
-            "multiRes": {
-                "basePath": "images/multires/stockage",
-                "path": "/%l/%s%y_%x",
-                "fallbackPath": "/fallback/%s",
-                "extension": "jpg",
-                "tileResolution": 512,
-                "maxLevel": 4,
-                "cubeResolution": 2600
-            },
-            "title": "Stockage",
-            "pitch": -4.19,
-            "yaw": -155.90,
-            "hfov":120,
-            "northOffset": -120, 
-            "hotSpotDebug": false,
-            "hotSpots": [
-                {
-                    "pitch": -5.85,
-                    "yaw": 29.34,
-                    "type": "scene",
-                    "text": "Bureau",
-                    "sceneId": "bureau",
-                    "targetPitch": -4.66,
-                    "targetYaw": 114.8
-                },
-                {
-                    "pitch": -4.19,
-                    "yaw": -155.90,
-                    "type": "scene",
-                    "text": "Salle Sieste",
-                    "sceneId": "salleSieste",
-                    "targetPitch": -5.96,
-                    "targetYaw": -177.3
-                }
-            ]
-        },        
         "entreeCantine": {
             "type": "multires",
             "multiRes": {
@@ -981,15 +934,6 @@
                     "sceneId": "classePetitsMoyens",
                     "targetPitch": -1.18,
                     "targetYaw": -85.77 
-                },
-                {
-                    "pitch": -5.95,
-                    "yaw": -12.18, 
-                    "type": "scene",
-                    "text": "Stockage",
-                    "sceneId": "stockage",
-                    "targetPitch": -5.80,
-                    "targetYaw": 33.28 
                 }
             ]
         }
